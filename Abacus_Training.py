@@ -17,8 +17,8 @@ def Random_N_Digits_int(min_digits: int, max_digits: int) -> int:
 
 
 def AdditionTraining () -> None:
-    random_number_1: float = random.randint(0,999)
-    random_number_2: float = random.randint(0,999)
+    random_number_1: int = random.randint(0,999)
+    random_number_2: int = random.randint(0,999)
     print(f"{random_number_1} + {random_number_2} = ", end="")
     result = random_number_1 + random_number_2
     input()
@@ -28,8 +28,8 @@ def AdditionTraining () -> None:
 
 
 def SubtractionTraining () -> None:
-    random_number_1: float = random.randint(0,999)
-    random_number_2: float = random.randint(0,999)
+    random_number_1: int = random.randint(0,999)
+    random_number_2: int = random.randint(0,999)
     if random_number_2 > random_number_1:
         random_number_1, random_number_2 = random_number_2, random_number_1
     print(f"{random_number_1} - {random_number_2} = ", end="")
