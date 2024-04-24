@@ -16,9 +16,9 @@ def Random_N_Digits_int(min_digits: int, max_digits: int) -> int:
     return random.randint(minimum_number, maximum_number)
 
 
-def AdditionTraining () -> None:
-    random_number_1: int = random.randint(0,999)
-    random_number_2: int = random.randint(0,999)
+def AdditionTraining (min_digits: int, max_digits: int) -> None:
+    random_number_1: int = Random_N_Digits_int(min_digits, max_digits)
+    random_number_2: int = Random_N_Digits_int(min_digits, max_digits)
     print(f"{random_number_1} + {random_number_2} = ", end="")
     result = random_number_1 + random_number_2
     input()
@@ -27,9 +27,9 @@ def AdditionTraining () -> None:
     input()
 
 
-def SubtractionTraining () -> None:
-    random_number_1: int = random.randint(0,999)
-    random_number_2: int = random.randint(0,999)
+def SubtractionTraining (min_digits: int, max_digits: int) -> None:
+    random_number_1: int = Random_N_Digits_int(min_digits, max_digits)
+    random_number_2: int = Random_N_Digits_int(min_digits, max_digits)
     if random_number_2 > random_number_1:
         random_number_1, random_number_2 = random_number_2, random_number_1
     print(f"{random_number_1} - {random_number_2} = ", end="")
@@ -67,9 +67,9 @@ def main() -> None:
 
         match user_input.upper():
             case 'A':
-                AdditionTraining()
+                AdditionTraining(min_operand_digits, max_operand_digits)
             case 'S':
-                SubtractionTraining()
+                SubtractionTraining(min_operand_digits, max_operand_digits)
             case 'P':
                 try:
                     min_operand_digits, max_operand_digits = digits_setup()
