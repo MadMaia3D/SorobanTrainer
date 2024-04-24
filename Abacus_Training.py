@@ -6,6 +6,16 @@ def GetClamped(value_to_clamp: int, min_value: int, max_value: int) -> int:
     return max(min_value, min(value_to_clamp, max_value))
 
 
+def Random_N_Digits_int(min_digits: int, max_digits: int) -> int:
+    minimum_number = int(10 ** min_digits / 10)
+    maximum_number = 0
+
+    for i in range(max_digits):
+        maximum_number += 9 * 10 ** i
+
+    return random.randint(minimum_number, maximum_number)
+
+
 def AdditionTraining () -> None:
     random_number_1: float = random.randint(0,999)
     random_number_2: float = random.randint(0,999)
