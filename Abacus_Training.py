@@ -19,10 +19,15 @@ def Random_N_Digits_int(min_digits: int, max_digits: int) -> int:
 def AdditionTraining (min_digits: int, max_digits: int) -> None:
     random_number_1: int = Random_N_Digits_int(min_digits, max_digits)
     random_number_2: int = Random_N_Digits_int(min_digits, max_digits)
-    print(f"{random_number_1:_} + {random_number_2:_} = ", end="")
     result = random_number_1 + random_number_2
-    input()
-    print(f"{result:_}")
+
+    number_1_display: str = f"{random_number_1:_}".replace("_", ".")
+    number_2_display: str = f"{random_number_2:_}".replace("_", ".")    
+    result_display = f"{result:_}".replace("_", ".")
+
+    input(f"{number_1_display} + {number_2_display} = ")    
+    print(result_display)
+    
     print("Press Enter to Continue...", end="")
     input()
 
@@ -30,12 +35,19 @@ def AdditionTraining (min_digits: int, max_digits: int) -> None:
 def SubtractionTraining (min_digits: int, max_digits: int) -> None:
     random_number_1: int = Random_N_Digits_int(min_digits, max_digits)
     random_number_2: int = Random_N_Digits_int(min_digits, max_digits)
+    
     if random_number_2 > random_number_1:
         random_number_1, random_number_2 = random_number_2, random_number_1
-    print(f"{random_number_1:_} - {random_number_2:_} = ", end="")
+    
     result = random_number_1 - random_number_2
-    input()
-    print(f"{result:_}")
+    
+    number_1_display: str = f"{random_number_1:_}".replace("_", ".")
+    number_2_display: str = f"{random_number_2:_}".replace("_", ".")
+    result_display = f"{result:_}".replace("_", ".")
+
+    input(f"{number_1_display} - {number_2_display} = ")
+    
+    print(f"{result_display}")
     input("Press Enter to Continue...")
 
 
