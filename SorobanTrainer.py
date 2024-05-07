@@ -50,6 +50,24 @@ def SubtractionTraining (min_digits: int, max_digits: int) -> None:
     print(f"{result_display}")
     input("Press Enter to Continue...")
 
+def MultiplicationTraining (min_digits: int, max_digits: int) -> None:
+    random_number_1: int = Random_N_Digits_int(min_digits, min_digits)
+    random_number_2: int = Random_N_Digits_int(min_digits, max_digits)
+    
+    if random_number_2 > random_number_1:
+        random_number_1, random_number_2 = random_number_2, random_number_1
+    
+    result = random_number_1 * random_number_2
+    
+    number_1_display: str = f"{random_number_1:_}".replace("_", ".")
+    number_2_display: str = f"{random_number_2:_}".replace("_", ".")
+    result_display = f"{result:_}".replace("_", ".")
+
+    input(f"{number_1_display} x {number_2_display} = ")
+    
+    print(f"{result_display}")
+    input("Press Enter to Continue...")
+
 
 def digits_setup () -> tuple[int, int]:
     user_input_min: int = int(input("Please, enter the minimum number of digits for the operands: "))
@@ -70,7 +88,7 @@ def main() -> None:
     max_operand_digits: int = 3
 
     while (True):
-        user_input: str = input("(A)ddition (S)ubtraction Setu(P) (Q)uit: ")
+        user_input: str = input("(A)ddition (S)ubtraction (M)ultiplication Setu(P) (Q)uit: ")
 
         if (len(user_input) != 0):
             user_input = user_input[0]
@@ -82,6 +100,8 @@ def main() -> None:
                 AdditionTraining(min_operand_digits, max_operand_digits)
             case 'S':
                 SubtractionTraining(min_operand_digits, max_operand_digits)
+            case 'M':
+                MultiplicationTraining(min_operand_digits, max_operand_digits)
             case 'P':
                 try:
                     min_operand_digits, max_operand_digits = digits_setup()
